@@ -13,7 +13,7 @@ function beginGame(){
         printLine('Good luck...pick your weapon.');
         startGame();
     } else {
-        echo "Try again!\n";
+        printLine("Try again!\n");
         beginGame();
     }
 }
@@ -27,7 +27,7 @@ function startGame(){
     if ($userChoice !== 'rock' && $userChoice !== 'paper' && $userChoice !== 'scissors'){
         echo "Try again.\n";
     }
-    echo 'Computer chose: ' . $computerChoice . "\n";
+    printLine('Computer chose: ' . $computerChoice . "\n");
     winningComparison($userChoice, $computerChoice);
 }
 
