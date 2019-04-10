@@ -25,7 +25,7 @@ function startGame(){
 
     $userChoice = getInput();
     if ($userChoice !== 'rock' && $userChoice !== 'paper' && $userChoice !== 'scissors'){
-        echo "Try again.\n";
+        printLine("Try again.\n");
     }
     printLine('Computer chose: ' . $computerChoice . "\n");
     winningComparison($userChoice, $computerChoice);
@@ -44,21 +44,22 @@ function printLine($msg){
 
 function winningComparison($input, $computerChoices){
     if ($input === $computerChoices){
-        echo 'Tie!';
+        printLine('Tie!');
     } elseif ($input === 'rock' && $computerChoices === 'paper'){
-        echo 'You lose!';
+        printLine('You lose!');
         $GLOBALS['losses']++;
     } elseif ($input === 'paper' && $computerChoices === 'scissors'){
-        echo 'You lose!';
+        printLine('You lose!');
         $GLOBALS['losses']++;
     } elseif ($input === 'scissors' && $computerChoices === 'rock'){
-        echo 'You lose!';
+        printLine('You lose!');
         $GLOBALS['losses']++;
     } else {
-        echo 'You win!';
+        printLine('You win!');
         $GLOBALS['wins']++;
     }
     displayScore($GLOBALS['wins'], $GLOBALS['losses']);
+    printLine("Don't stop now, go again...");
     startGame();
 }
 //
